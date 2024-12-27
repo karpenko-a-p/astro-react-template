@@ -1,0 +1,36 @@
+@import "../../variables/all";
+
+.heading {
+  color: $c_text_dark;
+  font-weight: 900;
+
+  &[data-tag="h1"] {
+    font-size: max(calc(1rem + 12px), 14px);
+    line-height: max(calc(2rem + 2px), 18px);
+  }
+
+  &[data-tag="h2"] {
+    font-size: max(calc(1rem + 10px), 14px);
+    line-height: max(2rem, 18px);;
+  }
+
+  &[data-tag="h3"] {
+    font-size: max(calc(1rem + 8px), 14px);
+    line-height: max(calc(2rem - 2px), 18px);
+  }
+
+  &[data-tag="h4"] {
+    font-size: max(calc(1rem + 6px), 14px);
+    line-height: max(calc(2rem - 4px), 18px);
+  }
+
+  &[data-tag="h5"] {
+    font-size: max(calc(1rem + 4px), 14px);
+    line-height: max(calc(2rem - 6px), 18px);
+  }
+
+  &[data-tag="h6"] {
+    font-size: max(calc(1rem + 2px), 14px);
+    line-height: max(calc(2rem - 8px), 18px);
+  }
+}

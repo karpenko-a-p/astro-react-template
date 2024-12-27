@@ -1,0 +1,71 @@
+@import "../../variables/all";
+
+.text {
+  transition: all 0.1s ease-in-out;
+
+  // Жирность
+  &[data-bold="400"] {
+    font-weight: 400;
+  }
+
+  &[data-bold="500"] {
+    font-weight: 500;
+  }
+
+  &[data-bold="true"],
+  &[data-bold="600"] {
+    font-weight: 600;
+  }
+
+  &[data-bold="700"] {
+    font-weight: 700;
+  }
+
+  &[data-bold="800"] {
+    font-weight: 800;
+  }
+
+  &[data-bold="900"] {
+    font-weight: 900;
+  }
+
+  // Размер
+  &[data-size="xs"] {
+    @include text_xs;
+  }
+
+  &[data-size="sm"] {
+    @include text_sm;
+  }
+
+  &[data-size="md"] {
+    @include text_md;
+  }
+
+  &[data-size="lg"] {
+    @include text_lg;
+  }
+
+  &[data-size="xl"] {
+    @include text_xl;
+  }
+
+  // Варианты
+  &[data-variant="primary"] {
+    color: $c_text_dark;
+  }
+
+  &[data-variant="secondary"] {
+    color: $c_text_secondary;
+  }
+
+  &[data-variant="disabled"] {
+    color: $c_text_dark_disabled;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &[data-variant="error"] {
+    color: $c_text_error;
+  }
+}

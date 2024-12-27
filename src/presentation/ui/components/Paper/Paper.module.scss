@@ -1,0 +1,32 @@
+@import "../../variables/all";
+
+.paper {
+  border-radius: $b_sm;
+  background-color: $c_white;
+
+  // Размер
+  &[data-size="xs"] {
+    padding: $s_xxxs;
+    @include shadow_xs;
+  }
+
+  &[data-size="sm"] {
+    padding: $s_xxs;
+    @include shadow_sm;
+  }
+
+  &[data-size="md"] {
+    padding: $s_xs;
+    @include shadow_md;
+  }
+
+  &[data-size="lg"] {
+    padding: $s_sm;
+    @include shadow_lg;
+  }
+
+  &[data-size="xl"] {
+    padding: $s_md;
+    @include shadow_xl;
+  }
+}

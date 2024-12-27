@@ -1,0 +1,20 @@
+@import "../../variables/all";
+
+.li {
+  & > * {
+    width: 100%;
+  }
+
+  &[data-text="true"]:not(:first-child) {
+    margin-top: $s_xxs;
+  }
+}
+
+.button {
+  justify-content: stretch;
+
+  & > *[data-component="Text"] {
+    flex: 1 1;
+    text-align: start;
+  }
+}

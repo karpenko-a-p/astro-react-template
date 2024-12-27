@@ -1,0 +1,180 @@
+@import "../../variables/all";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  & > .label {
+    margin-bottom: $s_xxxxs;
+
+    &[data-start="true"]:after {
+      content: '*';
+      color: $c_text_error;
+      margin-left: $s_xxxxs;
+    }
+  }
+}
+
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid $c_secondary;
+  border-radius: $b_sm;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    border-color: $c_primary_hover;
+  }
+
+  &:has(select:focus) {
+    border-color: $c_primary;
+  }
+
+  // Ошибка
+  &[data-hasError="true"] {
+    border-color: $c_error;
+  }
+
+  // Выключено
+  &[data-disabled="true"] {
+    background-color: $c_gray_3;
+    border-color: $c_gray_3;
+
+    & > .icon > svg {
+      color: $c_text_dark_disabled;
+    }
+  }
+
+
+  // Иконка открытия
+  & > .icon {
+    position: absolute;
+    top: 0;
+    right: $s_xxxs;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    border-radius: $b_sm;
+
+    & > svg {
+      color: $c_text_dark;
+    }
+  }
+
+  // Селект
+  & > select {
+    background-color: $c_white;
+    font-weight: 400;
+    overflow: hidden;
+    padding: $s_xxxs 0 $s_xxxs $s_xxxs;
+    flex: 0 0 100%;
+    appearance: none;
+    cursor: pointer;
+    color: $c_text_dark;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $c_text_placeholder;
+    }
+
+    &[data-placeholder="true"] {
+      color: $c_text_placeholder;
+    }
+
+    & > option {
+      color: $c_text_dark;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      user-select: none;
+      color: $c_text_dark_disabled;
+      background-color: $c_gray_3;
+      border-color: $c_gray_3;
+    }
+  }
+
+  // Размер
+  &[data-size="xs"] {
+    & svg {
+      width: $lh_xs;
+      height: $lh_xs;
+    }
+
+    & select {
+      @include text_xs;
+      padding-right: calc($s_xxxs * 2 + $lh_xs);
+    }
+  }
+
+  &[data-size="sm"] {
+    & svg {
+      width: $lh_sm;
+      height: $lh_sm;
+    }
+
+    & select {
+      @include text_sm;
+      padding-right: calc($s_xxxs * 2 + $lh_sm);
+    }
+  }
+
+  &[data-size="md"] {
+    & svg {
+      width: $lh_md;
+      height: $lh_md;
+    }
+
+    & select {
+      @include text_md;
+      padding-right: calc($s_xxxs * 2 + $lh_md);
+    }
+  }
+
+  &[data-size="lg"] {
+    & svg {
+      width: $lh_lg;
+      height: $lh_lg;
+    }
+
+    & select {
+      @include text_lg;
+      padding-right: calc($s_xxxs * 2 + $lh_lg);
+    }
+  }
+
+  &[data-size="xl"] {
+    & svg {
+      width: $lh_xl;
+      height: $lh_xl;
+    }
+
+    & select {
+      @include text_xl;
+      padding-right: calc($s_xxxs * 2 + $lh_xl);
+    }
+  }
+}
+
+// Описание
+.description {
+  margin-top: $s_xxxxs;
+}
+
+// Ошибка
+.error {
+  margin-top: $s_xxxxs;
+  transition: none;
+}
+
+.description + .error {
+  margin-top: 0;
+}

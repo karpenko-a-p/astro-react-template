@@ -1,0 +1,17 @@
+---
+import HtmlLayout from '@components/shared/HtmlLayout.astro';
+import { Text } from '@ui/components/Text';
+import { Container } from '@ui/components/Container';
+import { getService } from '@application/utils/getService';
+import { HELLO_WORLD_SERVICE } from '@application/shared/IHelloWorldService';
+import Counter from '@presentation/features/Counter';
+
+const { greeting } = getService(HELLO_WORLD_SERVICE).getGreeting();
+---
+
+<HtmlLayout>
+  <Container>
+    <Text>{greeting}</Text>
+    <Counter client:load />
+  </Container>
+</HtmlLayout>

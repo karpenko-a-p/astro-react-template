@@ -1,0 +1,39 @@
+@import "../../variables/all";
+
+.wrapper {
+  & > .skeleton + .skeleton {
+    margin-top: $s_xxs;
+  }
+}
+
+.skeleton {
+  height: 24px;
+  width: 100%;
+  background-color: $c_secondary;
+  overflow: hidden;
+  position: relative;
+  border-radius: $b_sm;
+
+  &[data-rounded="true"] {
+    border-radius: 9999px;
+  }
+
+  & > div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: $c_shadow;
+    animation: slideLine 1.75s ease-in-out infinite;
+    filter: blur(30px);
+  }
+}
+
+@keyframes slideLine {
+  from {
+    left: -130%;
+  }
+  to {
+    left: 130%;
+  }
+}

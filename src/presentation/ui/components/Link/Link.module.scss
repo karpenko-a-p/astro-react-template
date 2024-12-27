@@ -1,0 +1,15 @@
+@import "../../variables/all";
+
+.link {
+  display: inline-block;
+
+  & > [data-component="Text"] {
+    &:hover {
+      color: $c_primary_hover;
+    }
+
+    &:active {
+      color: $c_primary_active;
+    }
+  }
+}

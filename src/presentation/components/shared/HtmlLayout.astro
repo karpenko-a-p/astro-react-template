@@ -1,0 +1,56 @@
+---
+import 'reflect-metadata';
+import '@infrastructure/registration';
+import '@persistence/registration';
+import '@ui/global.css';
+import '@ui/fonts.css';
+import { enableStaticRendering } from 'mobx-react-lite';
+
+enableStaticRendering(true);
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  robots?: string;
+}
+
+const {
+  title = 'Astro template title',
+  description = 'Astro template description',
+  keywords = 'Astro template keywords',
+  robots = 'index, follow'
+}: Props = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="robots" content={robots} />
+  <title>{title}</title>
+  <slot name="head" />
+</head>
+<body>
+<slot />
+</body>
+</html>
+
+<style lang="scss">
+  @import '@ui/variables/all';
+
+  html {
+    background-color: $c_white;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    min-height: 100dvh;
+  }
+</style>

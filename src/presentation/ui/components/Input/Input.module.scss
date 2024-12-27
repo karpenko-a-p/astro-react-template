@@ -1,0 +1,89 @@
+@import "../../variables/all";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  & > .label {
+    margin-bottom: $s_xxxxs;
+
+    &[data-start="true"]:after {
+      content: '*';
+      color: $c_text_error;
+      margin-left: $s_xxxxs;
+    }
+  }
+}
+
+.input {
+  position: relative;
+
+  &[data-hasError="true"] > input {
+    border-color: $c_error;
+  }
+
+  // Сам тэг инпута
+  & > input {
+    border: 1px solid $c_secondary;
+    border-radius: $b_sm;
+    padding: $s_xxxs;
+    font-weight: 400;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      border-color: $c_primary_hover;
+    }
+
+    &:focus {
+      border-color: $c_primary;
+    }
+
+    &::placeholder {
+      color: $c_text_placeholder;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      user-select: none;
+      color: $c_text_dark_disabled;
+      background-color: $c_gray_3;
+      border-color: $c_gray_3;
+    }
+
+    // Размер
+    &[data-size="xs"] {
+      @include text_xs;
+    }
+
+    &[data-size="sm"] {
+      @include text_sm;
+    }
+
+    &[data-size="md"] {
+      @include text_md;
+    }
+
+    &[data-size="lg"] {
+      @include text_lg;
+    }
+
+    &[data-size="xl"] {
+      @include text_xl;
+    }
+  }
+}
+
+// Описание
+.description {
+  margin-top: $s_xxxxs;
+}
+
+// Ошибка
+.error {
+  margin-top: $s_xxxxs;
+  transition: none;
+}
+
+.description + .error {
+  margin-top: 0;
+}

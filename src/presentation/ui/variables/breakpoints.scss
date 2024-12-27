@@ -1,0 +1,34 @@
+// desktop-first
+
+$bp_mobile: 575px;
+$bp_tablet: 767px;
+$bp_laptop: 1023px;
+$bp_desktop: 1300px;
+
+// Мобильный телефон <= 575px
+@mixin mobile {
+  @media screen and (max-width: $bp_mobile) {
+    @content;
+  }
+}
+
+// Планшет <= 767px
+@mixin tablet {
+  @media screen and (max-width: $bp_tablet) {
+    @content;
+  }
+}
+
+// Маленький монитор (ноутбук) <= 1023px
+@mixin laptop {
+  @media screen and (max-width: $bp_laptop) {
+    @content;
+  }
+}
+
+// Стандартный экран <= 1300px
+@mixin laptop {
+  @media screen and (max-width: $bp_desktop) {
+    @content;
+  }
+}

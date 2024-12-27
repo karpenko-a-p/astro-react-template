@@ -1,0 +1,21 @@
+@import 'colors';
+
+@mixin shadow_xs($color: $c_shadow) {
+  box-shadow: 0 1px 5px 1px $color;
+}
+
+@mixin shadow_sm($color: $c_shadow) {
+  box-shadow: 0 3px 10px 2px $color;
+}
+
+@mixin shadow_md($color: $c_shadow) {
+  box-shadow: 0 5px 15px 3px $color;
+}
+
+@mixin shadow_lg($color: $c_shadow) {
+  box-shadow: 0 7px 20px 4px $color;
+}
+
+@mixin shadow_xl($color: $c_shadow) {
+  box-shadow: 0 9px 25px 5px $color;
+}

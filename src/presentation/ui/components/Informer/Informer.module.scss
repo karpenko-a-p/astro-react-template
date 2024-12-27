@@ -1,0 +1,40 @@
+@import "../../variables/all";
+
+.informer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: $s_xs;
+  border-radius: $b_xs;
+  border-left: 5px solid;
+
+  & > * + * {
+    margin-top: $s_xxxxs;
+  }
+
+  // Варианты
+  &[data-type="success"] {
+    background-color: $c_success_light;
+    border-color: $c_success;
+  }
+
+  &[data-type="error"] {
+    background-color: $c_error_light;
+    border-color: $c_error;
+  }
+
+  &[data-type="warn"] {
+    background-color: $c_warn_light;
+    border-color: $c_warn;
+  }
+
+  &[data-type="info"] {
+    background-color: $c_info_light;
+    border-color: $c_info;
+  }
+
+  &[data-type="neutral"] {
+    background-color: $c_gray_1;
+    border-color: $c_gray_8;
+  }
+}

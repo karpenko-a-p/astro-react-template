@@ -1,0 +1,48 @@
+@import "../../variables/all";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $b_sm;
+  padding: $s_xxxxs $s_xxxs;
+
+  // SVG
+  & > svg {
+    height: 16px;
+    width: 16px;
+    margin-right: $s_xxxxs;
+  }
+
+  // Цвет текста
+  & > *,
+  & [data-component="Text"] {
+    color: $c_text_light;
+  }
+
+  // Типы
+  &[data-type="success"] {
+    background-color: $c_success;
+  }
+
+  &[data-type="error"] {
+    background-color: $c_error;
+  }
+
+  &[data-type="warn"] {
+    background-color: $c_warn;
+  }
+
+  &[data-type="info"] {
+    background-color: $c_info;
+  }
+
+  &[data-type="neutral"] {
+    background-color: $c_gray_1;
+
+    & > *,
+    & [data-component="Text"] {
+      color: $c_text_dark;
+    }
+  }
+}

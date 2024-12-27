@@ -1,0 +1,16 @@
+@import "../../variables/all";
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $s_xs;
+  max-width: $bp_desktop;
+
+  @include tablet {
+    padding: 0 $s_xxs;
+  }
+
+  @include mobile {
+    padding: 0 $s_xxxs;
+  }
+}

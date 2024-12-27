@@ -1,0 +1,48 @@
+{
+  "include": [
+    "src/types.d.ts",
+    ".astro/types.d.ts",
+    "**/*",
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "plugins": [
+    {
+      "name": "@astrojs/ts-plugin"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "target": "ES2019",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@src/*": ["src/*"],
+      "@ui/*": ["src/presentation/ui/*"],
+      "@utils/*": ["src/presentation/utils/*"],
+      "@components/*": ["src/presentation/components/*"],
+      "@presentation/*": ["src/presentation/*"],
+      "@application/*": ["src/application/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@persistence/*": ["src/persistence/*"],
+      "@domain/*": ["src/domain/*"]
+    }
+  }
+}

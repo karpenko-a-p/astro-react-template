@@ -1,0 +1,24 @@
+@import "./colors";
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $c_gray_2;
+  }
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $c_dark_1;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $c_dark_2;
+  }
+}

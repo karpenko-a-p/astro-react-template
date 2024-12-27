@@ -1,0 +1,18 @@
+@import "../../variables/all";
+
+.tooltip {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010;
+  transition: all 0.1s ease-in-out;
+  padding: $s_xxxs;
+  transform: translateY(-15%);
+  opacity: 0;
+
+  &[data-open="true"] {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

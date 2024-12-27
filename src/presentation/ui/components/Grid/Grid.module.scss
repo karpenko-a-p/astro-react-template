@@ -1,0 +1,10 @@
+@import "../../variables/all";
+
+.grid {
+  display: grid;
+  gap: $s_xxs;
+
+  @include mobile {
+    gap: $s_xxxs;
+  }
+}

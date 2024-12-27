@@ -1,0 +1,48 @@
+@import './breakpoints';
+
+html {
+  font-size: 16px;
+
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+// Размер текста
+$fz_xs: max(calc(1rem - 4px), 12px);
+$fz_sm: max(calc(1rem - 2px), 14px);
+$fz_md: max(1rem, 14px);
+$fz_lg: max(calc(1rem + 2px), 14px);
+$fz_xl: max(calc(1rem + 4px), 14px);
+
+// Высота текста
+$lh_xs: max(calc((1rem * 1.5) - 8px), 18px);
+$lh_sm: max(calc((1rem * 1.5) - 4px), 20px);
+$lh_md: max(1rem * 1.5, 20px);
+$lh_lg: max(calc((1rem * 1.5) + 4px), 20px);
+$lh_xl: max(calc((1rem * 1.5) + 8px), 20px);
+
+@mixin text_xs {
+  font-size: $fz_xs;
+  line-height: $lh_xs;
+}
+
+@mixin text_sm {
+  font-size: $fz_sm;
+  line-height: $lh_sm;
+}
+
+@mixin text_md {
+  font-size: $fz_md;
+  line-height: $lh_md;
+}
+
+@mixin text_lg {
+  font-size: $fz_lg;
+  line-height: $lh_lg;
+}
+
+@mixin text_xl {
+  font-size: $fz_xl;
+  line-height: $lh_xl;
+}

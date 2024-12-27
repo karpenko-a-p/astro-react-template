@@ -1,0 +1,24 @@
+@import "../../variables/all";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.track {
+  border-radius: $b_md;
+  background-color: $c_secondary;
+  position: relative;
+  height: $s_xxxs;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: $b_md;
+    background-color: $c_primary;
+  }
+}
