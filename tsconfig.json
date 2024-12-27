@@ -42,7 +42,8 @@
       "@application/*": ["src/application/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
       "@persistence/*": ["src/persistence/*"],
-      "@domain/*": ["src/domain/*"]
+      "@domain/*": ["src/domain/*"],
+      "@use-cases/*": ["src/application/use-cases/*"],
     }
   }
 }

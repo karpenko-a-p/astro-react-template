@@ -28,14 +28,7 @@ export class CounterStore implements ICounterStore {
   /**
    * @inheritDoc
    */
-  increment() {
-    this.count++;
-  }
-
-  /**
-   * @inheritDoc
-   */
-  decrement() {
-    this.count--;
+  setCount(value: number): void {
+    this.count = value;
   }
 }

@@ -7,17 +7,12 @@ export interface ICounterStore {
   /**
    * Получить состояние счетчика
    */
-  getCount(): number;
+  getCount(): Readonly<number>;
 
   /**
-   * Увеличить
+   * Установить значение счетчика
    */
-  increment(): void;
-
-  /**
-   * Уменьшить
-   */
-  decrement(): void;
+  setCount(value: number): void;
 }
 
 export const COUNTER_STORE = new Token<ICounterStore>();
