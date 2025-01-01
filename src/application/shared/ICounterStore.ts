@@ -1,4 +1,4 @@
-import { Token } from 'typedi';
+import { configureForDi } from '@application/utils/configureForDi';
 
 /**
  * Стор со счетчиком
@@ -15,4 +15,4 @@ export interface ICounterStore {
   setCount(value: number): void;
 }
 
-export const COUNTER_STORE = new Token<ICounterStore>();
+export const { token: COUNTER_STORE, getInstance: getCounterStore } = configureForDi<ICounterStore>();

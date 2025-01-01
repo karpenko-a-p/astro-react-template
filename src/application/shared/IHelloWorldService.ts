@@ -1,5 +1,5 @@
-import { Token } from 'typedi';
 import { GreetingModel } from '@domain/GreetingModel';
+import { configureForDi } from '@application/utils/configureForDi';
 
 /**
  * Hello World! сервис
@@ -11,4 +11,4 @@ export interface IHelloWorldService {
   getGreeting(): GreetingModel;
 }
 
-export const HELLO_WORLD_SERVICE = new Token<IHelloWorldService>();
+export const { token: HELLO_WORLD_SERVICE, getInstance: getHelloWorldService } = configureForDi<IHelloWorldService>();

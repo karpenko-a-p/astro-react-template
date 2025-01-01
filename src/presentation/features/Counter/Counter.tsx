@@ -1,5 +1,4 @@
-import 'reflect-metadata';
-import '@persistence/registration';
+import '@utils/register-services';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { CounterViewModel } from './Counter.ViewModel';

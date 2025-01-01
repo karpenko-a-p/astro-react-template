@@ -1,12 +1,12 @@
 ---
+import '@utils/register-services';
 import HtmlLayout from '@components/shared/HtmlLayout.astro';
 import { Text } from '@ui/components/Text';
 import { Container } from '@ui/components/Container';
-import { getService } from '@application/utils/getService';
-import { HELLO_WORLD_SERVICE } from '@application/shared/IHelloWorldService';
+import { getHelloWorldService } from '@application/shared/IHelloWorldService';
 import Counter from '@presentation/features/Counter';
 
-const { greeting } = getService(HELLO_WORLD_SERVICE).getGreeting();
+const { greeting } = getHelloWorldService().getGreeting();
 ---
 
 <HtmlLayout>
