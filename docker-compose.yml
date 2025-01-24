@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "4321:4321"
+    networks:
+      - frontend
+
+networks:
+  frontend:
