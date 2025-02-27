@@ -11,6 +11,19 @@ export class Element<TElement extends HTMLElement> {
   private events: Record<AddEventListener[0], AddEventListener[1]> = {};
 
   constructor(private readonly element: TElement | null) {
+    this.on = this.on.bind(this);
+    this.off = this.off.bind(this);
+    this.destroy = this.destroy.bind(this);
+    this.attr = this.attr.bind(this);
+    this.data = this.data.bind(this);
+    this.text = this.text.bind(this);
+  }
+
+  /**
+   * Геттер для классов
+   */
+  get classList() {
+    return this.element?.classList;
   }
 
   /**
@@ -68,6 +81,49 @@ export class Element<TElement extends HTMLElement> {
     }
 
     this.element.parentNode?.removeChild(this.element);
+  }
+
+  /**
+   * Добавление/получение аттрибутов
+   * @param name - название аттрибута
+   */
+  attr(name: string): string | null
+  attr(name: string, value: string): Element<TElement>
+  attr(name: string, value?: string): Element<TElement> | null | string {
+    if (value !== undefined) {
+      this.element?.setAttribute(name, value);
+      return this;
+    }
+
+    return this.element?.getAttribute(name) ?? null;
+  }
+
+  /**
+   * Добавление/получение data аттрибутов
+   * @param name - название аттрибута
+   */
+  data(name: string): string | null
+  data(name: string, value: string): Element<TElement>
+  data(name: string, value?: string): Element<TElement> | null | string {
+    return this.attr('data-' + name, value as string);
+  }
+
+  /**
+   * Получение/установка текста
+   * @param value - текст
+   */
+  text(value: string): Element<TElement>
+  text(): string
+  text(value?: string): Element<TElement> | string {
+    if (!this.element)
+      return '';
+
+    if (!value)
+      return this.element.innerText;
+
+    this.element.innerText = value;
+
+    return this;
   }
 }
 

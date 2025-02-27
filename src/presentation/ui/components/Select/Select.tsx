@@ -1,6 +1,6 @@
 import React, { type ChangeEvent, type FC, forwardRef, useCallback, useState } from 'react';
 import cn from 'clsx';
-import IconSelector from '@tabler/icons-react/dist/esm/IconSelector';
+import IconSelector from '@tabler/icons-react/dist/esm/icons/IconSelector.mjs';
 import { Text } from '../Text/Text';
 
 import styles from './Select.module.scss';
